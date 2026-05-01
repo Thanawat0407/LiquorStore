@@ -196,14 +196,13 @@ margin-bottom:20px;
 
 <div class="container">
 <div class="form-card">
-<h2>แก้ไขสินค้า</h2>
+<h2>เพิ่มสินค้าใหม่</h2>
 
 <form method="post">
 
 <div class="form-group">
 <label for="name">ชื่อสินค้า *</label>
-<input id="name" name="name" placeholder="เช่น Johnnie Walker Black Label"
-value="{{liquor.name}}" required>
+<input id="name" name="name" placeholder="เช่น Johnnie Walker Black Label" required>
 </div>
 
 <div class="form-section-title">ข้อมูลราคา</div>
@@ -211,13 +210,11 @@ value="{{liquor.name}}" required>
 <div class="form-row">
 <div class="form-group">
 <label for="price">ราคา (บาท) *</label>
-<input id="price" name="price" placeholder="1999.00"
-value="{{liquor.price}}" type="number" step="0.01" required>
+<input id="price" name="price" placeholder="1999.00" type="number" step="0.01" required>
 </div>
 <div class="form-group">
 <label for="stock">คงเหลือ (จำนวน) *</label>
-<input id="stock" name="stock" placeholder="50"
-value="{{liquor.stock}}" type="number" required>
+<input id="stock" name="stock" placeholder="50" type="number" required>
 </div>
 </div>
 
@@ -226,24 +223,20 @@ value="{{liquor.stock}}" type="number" required>
 <div class="form-row">
 <div class="form-group">
 <label for="alcohol">แอลกอฮอล์ (%) *</label>
-<input id="alcohol" name="alcohol" placeholder="40"
-value="{{liquor.alcohol_content}}" type="number" step="0.1" required>
+<input id="alcohol" name="alcohol" placeholder="40" type="number" step="0.1" required>
 </div>
 <div class="form-group">
 <label for="volume">ปริมาตร (ml) *</label>
-<input id="volume" name="volume" placeholder="750"
-value="{{liquor.volume}}" type="number" required>
+<input id="volume" name="volume" placeholder="750" type="number" required>
 </div>
 </div>
 
 <div class="form-group">
 <label for="category">หมวดหมู่ *</label>
 <select id="category" name="category" required>
+<option value="" disabled selected>เลือกหมวดหมู่</option>
 {% for c in categories %}
-<option value="{{c.id}}"
-{% if liquor.category_id == c.id %}selected{% endif %}>
-{{c.name}}
-</option>
+<option value="{{c.id}}">{{c.name}}</option>
 {% endfor %}
 </select>
 </div>
@@ -251,11 +244,9 @@ value="{{liquor.volume}}" type="number" required>
 <div class="form-group">
 <label for="supplier">ผู้จัดจำหน่าย (Supplier) *</label>
 <select id="supplier" name="supplier" required>
+<option value="" disabled selected>เลือกผู้จัดจำหน่าย</option>
 {% for s in suppliers %}
-<option value="{{s.id}}"
-{% if liquor.supplier_id == s.id %}selected{% endif %}>
-{{s.supplier_name}}
-</option>
+<option value="{{s.id}}">{{s.supplier_name}}</option>
 {% endfor %}
 </select>
 </div>
@@ -264,8 +255,7 @@ value="{{liquor.volume}}" type="number" required>
 
 <div class="form-group">
 <label for="image">URL รูปภาพ *</label>
-<input id="image" name="image" placeholder="https://example.com/image.jpg"
-value="{{liquor.image}}" required>
+<input id="image" name="image" placeholder="https://example.com/image.jpg" required>
 </div>
 
 <div class="form-buttons">
